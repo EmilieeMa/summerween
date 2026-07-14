@@ -2416,3 +2416,248 @@ body {
     overflow-wrap: anywhere !important;
   }
 }
+
+/* --- Correctif responsive mobile final --- */
+@media (max-width: 700px) {
+  .hero::before {
+    background:
+      linear-gradient(180deg, rgba(18,18,26,.82) 0%, rgba(18,18,26,.78) 42%, rgba(18,18,26,.96) 100%),
+      radial-gradient(circle at 50% 28%, rgba(79,44,136,.18), transparent 50%),
+      url("assets/images/mystic_host.webp") center top / cover no-repeat !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero::after {
+    background:
+      linear-gradient(180deg, rgba(18,18,26,0) 0%, rgba(18,18,26,.42) 48%, var(--black) 100%),
+      radial-gradient(circle at 50% 28%, rgba(106,17,34,.18), transparent 58%) !important;
+  }
+
+  .hero-backdrop {
+    background:
+      repeating-linear-gradient(110deg, transparent 0 42px, rgba(255,255,255,0.012) 43px 44px) !important;
+  }
+
+  .hero-content {
+    width: min(100% - 28px, 430px) !important;
+    padding-top: calc(112px + env(safe-area-inset-top)) !important;
+  }
+
+  .hero h1 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: .04em !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: clamp(3.2rem, 18vw, 4.8rem) !important;
+    line-height: .82 !important;
+    letter-spacing: 0 !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    white-space: normal !important;
+  }
+
+  .hero-title-line {
+    display: block !important;
+    width: auto !important;
+    max-width: 100% !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-title-line + .hero-title-line {
+    margin-top: .02em !important;
+  }
+
+  .hero-subtitle {
+    max-width: 330px !important;
+    font-size: clamp(.72rem, 3vw, .88rem) !important;
+    letter-spacing: .12em !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero h1 {
+    font-size: clamp(2.85rem, 17vw, 3.85rem) !important;
+  }
+}
+
+/* --- Correctif final centrage boutons vidéo --- */
+.video-play {
+  padding: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  place-content: center !important;
+}
+
+.video-play .play-icon {
+  display: grid !important;
+  place-items: center !important;
+  margin: 0 !important;
+}
+
+.play-icon::before {
+  position: static !important;
+  display: block !important;
+  transform: translateX(3px) !important;
+  border-left: 22px solid var(--white) !important;
+  border-top: 14px solid transparent !important;
+  border-bottom: 14px solid transparent !important;
+}
+
+.video-pause {
+  display: none;
+  grid-template-columns: none !important;
+  gap: 0 !important;
+  place-items: center !important;
+  place-content: center !important;
+}
+
+.video-pause span {
+  display: none !important;
+}
+
+.video-pause::before,
+.video-pause::after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 17px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.video-pause::before {
+  transform: translateX(-3px);
+}
+
+.video-pause::after {
+  transform: translateX(3px);
+}
+
+.video-shell.is-playing .video-pause {
+  display: grid !important;
+}
+
+
+/* --- Correctif final : centrage réel du lecteur vidéo --- */
+.video-shell {
+  position: relative !important;
+}
+
+.video-shell .video-play {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: rgba(18, 18, 26, 0.08) !important;
+  border: 0 !important;
+  z-index: 6 !important;
+}
+
+.video-shell.is-playing .video-play {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.video-shell .play-icon {
+  position: relative !important;
+  width: 78px !important;
+  height: 78px !important;
+  min-width: 78px !important;
+  min-height: 78px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  border: 2px solid rgba(229, 219, 209, 0.72) !important;
+  background: rgba(18, 18, 26, 0.34) !important;
+}
+
+.video-shell .play-icon::before {
+  content: "" !important;
+  position: static !important;
+  display: block !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin-left: 6px !important;
+  transform: none !important;
+  border-left: 24px solid var(--white) !important;
+  border-top: 15px solid transparent !important;
+  border-bottom: 15px solid transparent !important;
+}
+
+.video-play-label,
+.video-caption {
+  display: none !important;
+}
+
+.video-pause {
+  position: absolute !important;
+  right: 16px !important;
+  bottom: 16px !important;
+  z-index: 7 !important;
+  width: 48px !important;
+  height: 48px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 1px solid rgba(229, 219, 209, 0.65) !important;
+  border-radius: 50% !important;
+  background: rgba(18, 18, 26, 0.62) !important;
+  color: var(--white) !important;
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  grid-template-columns: none !important;
+}
+
+.video-pause span,
+.video-pause::before,
+.video-pause::after {
+  display: none !important;
+  content: none !important;
+}
+
+.video-pause .pause-bar {
+  display: block !important;
+  width: 4px !important;
+  height: 18px !important;
+  border-radius: 2px !important;
+  background: currentColor !important;
+}
+
+.video-shell.is-playing .video-pause {
+  display: flex !important;
+}
+
+@media (max-width: 620px) {
+  .video-shell .play-icon {
+    width: 72px !important;
+    height: 72px !important;
+    min-width: 72px !important;
+    min-height: 72px !important;
+  }
+
+  .video-shell .play-icon::before {
+    border-left-width: 22px !important;
+    border-top-width: 14px !important;
+    border-bottom-width: 14px !important;
+  }
+
+  .video-pause {
+    right: 12px !important;
+    bottom: 12px !important;
+    width: 46px !important;
+    height: 46px !important;
+  }
+}
