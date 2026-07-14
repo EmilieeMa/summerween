@@ -2661,3 +2661,49 @@ body {
     height: 46px !important;
   }
 }
+
+/* Dernier correctif mobile : éviter le double bouton d'inscription dans l'accueil */
+@media (max-width: 860px) {
+  .hero-actions .button-ghost[href="#inscription"] {
+    display: none !important;
+  }
+}
+
+/* Correctif final demandé : titre mobile sur 2 lignes + suppression du double bouton */
+@media (max-width: 700px) {
+  .hero h1#hero-title {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+    font-size: clamp(3rem, 14.5vw, 4.3rem) !important;
+    line-height: 0.86 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+    word-break: keep-all !important;
+  }
+
+  .hero h1#hero-title .hero-title-line {
+    display: block !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+    white-space: nowrap !important;
+    overflow-wrap: normal !important;
+    word-break: keep-all !important;
+  }
+
+  .hero-actions .button-ghost[href="#inscription"] {
+    display: none !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero h1#hero-title {
+    font-size: clamp(2.7rem, 14vw, 3.15rem) !important;
+  }
+}
