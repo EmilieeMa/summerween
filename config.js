@@ -1,10 +1,10 @@
 /*
-  Colle le lien définitif du Google Form entre les guillemets.
-  Tant que le lien reste vide, le bouton affiche un message d’attente.
+  Lien du formulaire d’inscription.
+  Le texte du bouton reste volontairement neutre pour les participants.
 */
 window.SUMMERWEEN_CONFIG = {
   formLinks: {
-    participation: ""
+    participation: "https://docs.google.com/forms/d/e/1FAIpQLSd7Ikj9XvUnEEdOmTUzthQi1Zy2i_8y4E-hH4tubyUcQ2DSuQ/viewform?pli=1"
   },
   teaserVideo: "assets/video/teaser.mp4"
 };

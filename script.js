@@ -35,8 +35,8 @@
   updateHeader();
   window.addEventListener("scroll", updateHeader, { passive: true });
 
-  // Countdown: 27 August 2026 at 19:30 in France (summer time, UTC+2).
-  const eventDate = new Date("2026-08-27T19:30:00+02:00");
+  // Countdown: 27 August 2026 at 19:00 in France (summer time, UTC+2).
+  const eventDate = new Date("2026-08-27T19:00:00+02:00");
   const countdownEls = {
     days: document.querySelector('[data-countdown="days"]'),
     hours: document.querySelector('[data-countdown="hours"]'),

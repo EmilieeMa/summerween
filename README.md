@@ -1,68 +1,57 @@
-# Site Summerween — version mobile QR code
+# Site Summerween — version finale
 
-## Ouvrir le site
+## Mise en ligne sur GitHub
 
-Ouvrir `index.html` dans un navigateur récent. Le site est conçu en priorité pour les téléphones après le scan d’un QR code : navigation tactile, textes lisibles, vidéo verticale et bouton d’inscription fixe en bas de l’écran.
+Pour mettre à jour le site en ligne :
 
-## Ajouter le formulaire Google
+1. Ouvrir le dépôt GitHub `summerween`.
+2. Cliquer sur **Add file → Upload files**.
+3. Envoyer tout le contenu de ce dossier :
+   - `index.html`
+   - `styles.css`
+   - `script.js`
+   - `config.js`
+   - `.nojekyll`
+   - le dossier `assets`
+4. Cliquer sur **Commit changes**.
+5. Attendre quelques minutes que GitHub Pages se mette à jour.
 
-Ouvrir `config.js` puis coller le lien définitif du formulaire entre les guillemets :
+Le lien du site reste le même tant que le nom du dépôt ne change pas :
 
-```js
-window.SUMMERWEEN_CONFIG = {
-  formLinks: {
-    participation: "https://votre-formulaire-google.fr"
-  },
-  teaserVideo: "assets/video/teaser.mp4"
-};
-```
+`https://emilieema.github.io/summerween/`
 
-Tant que le lien reste vide, le bouton affiche un message d’attente.
+## Formulaire d'inscription
 
-## Informations intégrées
+Le bouton d'inscription utilise le lien présent dans `config.js`.
 
-- Soirée le 27 août 2026 à 19 h 30.
+Texte affiché sur le site : **JE M’INSCRIS ICI**
+
+## Informations intégrées au site
+
+- Soirée le 27 août 2026 à 19 h.
 - Rendez-vous à l’Espace du Personnel.
 - 100 places disponibles.
-- Répartition en équipes de 10.
+- Équipes de 10 personnes.
 - Inscription réservée aux personnes sous contrat chez Walibi Rhône-Alpes le jour de la soirée.
-- Déguisement facultatif.
-- Le contenu précis de l’expérience reste volontairement secret.
+- Sans réservation préalable, aucun accès à la soirée ne sera possible.
+- Déguisement autorisé mais non obligatoire.
+- Tenue Walibi non autorisée.
+- Visage visible : aucun masque ou accessoire couvrant.
+- Armes et répliques strictement interdites.
+- Règlement intérieur Walibi applicable.
+- Les images de Mystic servent à l’ambiance et n’annoncent pas l’ouverture de l’attraction.
 
-## Teaser
+## Remplacer le teaser plus tard
 
-Le teaser actuel dure environ 21 secondes et utilise un format vertical `720 × 1280`, adapté aux téléphones. Il présente le dossier fictif S-27 du Docteur Mystic sans révéler le déroulement exact de la soirée ni annoncer l’ouverture d’une attraction.
-
-Pour le remplacer plus tard, conserver le nom :
+Remplacer simplement le fichier :
 
 `assets/video/teaser.mp4`
 
-Format conseillé : MP4 H.264 vertical, avec un poids inférieur à 10 ou 15 Mo pour une lecture rapide en 4G/5G.
+Il faut garder le même nom de fichier pour que le site le charge automatiquement.
 
-## Modifier le site
-
-Le contenu se trouve dans `index.html`. Les couleurs principales sont définies dans `styles.css` :
-
-- Violet : `#4F2C88`
-- Rouge : `#6A1122`
-- Mauve : `#CF5549`
-- Noir : `#12121A`
-- Beige : `#E5DBD1`
-
-## Mise en ligne
-
-Envoyer l’intégralité du dossier sur l’hébergement sans modifier son arborescence. Tester ensuite le QR code sur au moins un iPhone et un téléphone Android, en Wi-Fi puis en 4G/5G.
-
-## Visuels
-
-Les visuels présents dans le dossier sont ceux fournis pour la communication de l’événement.
-
-## Version mobile QR code
-
-Le site est optimisé pour une consultation après scan d’un QR code : marges de sécurité iPhone, boutons tactiles, titre « SUMMER / WEEN » sur deux lignes et teaser vertical avec bouton de lecture central.
+Format conseillé : MP4 vertical 9:16, 1080 x 1920, moins de 15 Mo si possible.
 
 
+## Correctif menu mobile et vidéo
 
-## Correctif lecteur vidéo
-
-Le bouton central disparaît entièrement pendant la lecture. Un petit bouton pause apparaît en bas à droite, et un clic directement sur la vidéo la met également en pause. Une fois en pause, le bouton central « Reprendre le message » réapparaît. Le titre Summerween est aussi réduit sur ordinateur tout en restant sur deux lignes sur téléphone.
+Le menu mobile s’ouvre maintenant en plein écran même lorsque la page est déjà scrollée. Le bouton fixe d’inscription est masqué pendant l’ouverture du menu. La vidéo utilise une nouvelle image d’aperçu sans ancienne mention horaire et le bouton de lecture ne masque plus le texte de la vidéo.
