@@ -45,7 +45,7 @@ Texte affiché sur le site : **JE M’INSCRIS ICI**
 
 Remplacer simplement le fichier :
 
-`assets/video/teaser.mp4`
+`assets/video/teaser-summerween-final.mp4`
 
 Il faut garder le même nom de fichier pour que le site le charge automatiquement.
 

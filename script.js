@@ -2,6 +2,7 @@
   "use strict";
 
   const config = window.SUMMERWEEN_CONFIG || { formLinks: {} };
+  const fallbackFormLink = 'https://docs.google.com/forms/d/e/1FAIpQLSd7Ikj9XvUnEEdOmTUzthQi1Zy2i_8y4E-hH4tubyUcQ2DSuQ/viewform?pli=1';
   const body = document.body;
   const header = document.querySelector(".site-header");
   const menuToggle = document.querySelector(".menu-toggle");
@@ -106,7 +107,6 @@
   const video = document.querySelector("#teaser-video");
   const playButton = document.querySelector(".video-play");
   const pauseButton = document.querySelector(".video-pause");
-  const playLabel = playButton?.querySelector(".video-play-label");
 
   if (video && config.teaserVideo) {
     const source = video.querySelector("source");
@@ -122,11 +122,6 @@
     pauseButton?.setAttribute("aria-hidden", String(!isPlaying));
     pauseButton?.setAttribute("tabindex", isPlaying ? "0" : "-1");
 
-    if (playLabel) {
-      playLabel.innerHTML = state === "paused"
-        ? "Reprendre le message du<br>Docteur Mystic"
-        : "Lire le message du<br>Docteur Mystic";
-    }
   };
 
   playButton?.addEventListener("click", async () => {
@@ -137,7 +132,7 @@
       await video.play();
     } catch (error) {
       setVideoState("ready");
-      showToast("La vidéo n’est pas encore disponible. Remplacez assets/video/teaser.mp4 par votre teaser final.");
+      showToast("La vidéo n’est pas encore disponible. Remplacez le fichier vidéo par votre teaser final.");
     }
   });
 
@@ -172,13 +167,14 @@
 
   // Configurable form buttons.
   document.querySelectorAll("[data-form]").forEach((button) => {
+    if (button.tagName === "A") return;
     button.addEventListener("click", () => {
       const key = button.dataset.form;
-      const url = config.formLinks?.[key]?.trim();
+      const url = config.formLinks?.[key]?.trim() || fallbackFormLink;
       if (url && /^https?:\/\//i.test(url)) {
         window.open(url, "_blank", "noopener,noreferrer");
       } else {
-        showToast("Le lien de ce formulaire doit encore être ajouté dans le fichier config.js.");
+        showToast("Le lien d’inscription est indisponible pour le moment.");
       }
     });
   });
